@@ -34,3 +34,5 @@ build/
 
 ### Run source ###
 *.log
+/tools/data/
+/tools/mongo-data/
