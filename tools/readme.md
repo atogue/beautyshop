@@ -16,3 +16,9 @@
 ````shell
     docker compose stop && docker compose rm -f
 ````
+
+- Mongo Express UI :
+http://localhost:8081 --> admin/pass
+
+- Grafana UI :
+http://localhost:29000 --> admin/admin
