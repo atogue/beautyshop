@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: beauty-shop
+  data:
+    mongodb:
+      database: ${spring.application.name}
+server:
+  servlet:
+    context-path: /api

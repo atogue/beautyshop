@@ -1,0 +1,70 @@
+POST http://localhost:8080/api/data/v1/users/owner
+Content-Type: application/json
+
+{
+  "name": "Meghan",
+  "email": "meghan@foba.tech",
+  "phone": "+11298765432",
+  "shops": [{"name": "New-York Beauty", "phone": "+1234567789", "ownerName": "Meghan", "activities": ["Make-Up", "Clean-hair", "Afro-hair"]}],
+  "address": {
+    "city": "New York",
+    "country": "USA",
+    "state": "Pennsylvania",
+    "zip": "25-577-21"
+  }
+}
+
+###
+POST http://localhost:8080/api/data/v1/shops
+Content-Type: application/json
+
+{
+  "name": "New-York Beauty",
+  "phone": "+1234567789",
+  "ownerName": "Meghan",
+  "activities": ["Make-Up", "Clean-hair", "Afro-hair"],
+  "address": {
+    "city": "New York",
+    "country": "USA",
+    "state": "Pennsylvania",
+    "zip": "24-566-20"
+  }
+}
+
+###
+GET http://localhost:8080/api/data/v1/shops
+Accept: application/json
+
+###
+
+###
+POST http://localhost:8080/api/data/v1/users/client
+Content-Type: application/json
+
+{
+  "name": "Enzo",
+  "email": "enzo@foba.tech",
+  "phone": "+330198765432",
+  "shops": [{"name": "New-York Beauty", "phone": "+1234567789", "ownerName": "Meghan", "activities": ["Make-Up", "Clean-hair", "Afro-hair"]}]
+}
+
+###
+GET http://localhost:8080/api/data/v1/users/client
+Accept: application/json
+
+###
+POST http://localhost:8080/api/data/v1/users/employee
+Content-Type: application/json
+
+{
+  "name": "Muriel",
+  "email": "muriel@foba.tech",
+  "phone": "+390123476589",
+  "shops": [{"name": "New-York Beauty", "phone": "+1234567789", "ownerName": "Meghan", "activities": ["Make-Up", "Clean-hair", "Afro-hair"]}]
+}
+
+###
+GET http://localhost:8080/api/data/v1/users/employee
+Accept: application/json
+
+###
