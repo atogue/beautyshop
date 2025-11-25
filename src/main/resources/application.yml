@@ -4,6 +4,12 @@ spring:
   data:
     mongodb:
       database: ${spring.application.name}
+      username: mongo
+      password: mongo
+      authentication-database: admin
 server:
   servlet:
     context-path: /api
+logging:
+  file:
+    name: ./logs/${spring.application.name}.log
