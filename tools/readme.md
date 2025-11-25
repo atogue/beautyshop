@@ -11,3 +11,8 @@
 ```` shell
     docker compose up -d
 ````
+
+- Stop all instances
+````shell
+    docker compose stop && docker compose rm -f
+````
