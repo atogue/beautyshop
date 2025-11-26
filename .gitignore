@@ -33,6 +33,6 @@ build/
 .vscode/
 
 ### Run source ###
-*.log
+/logs/
 /tools/data/
 /tools/mongo-data/
