@@ -7,7 +7,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: mongo
       MONGO_INITDB_ROOT_PASSWORD: mongo
     ports:
-      - 27017:27017
+      - "27017:27017"
     networks:
       - applications-network
     volumes:
@@ -16,7 +16,7 @@ services:
     image: mongo-express:1.0.2-20-alpine3.19
     container_name: mongoexpress
     ports:
-      - 8081:8081
+      - "8081:8081"
     environment:
       ME_CONFIG_MONGODB_SERVER: mongodb
       ME_CONFIG_MONGODB_ADMINUSERNAME: mongo
@@ -34,7 +34,7 @@ services:
     container_name: loki
     restart: unless-stopped
     ports:
-      - 29100:3100
+      - "29100:3100"
     command: -config.file=/etc/loki/local-config.yaml
     volumes:
       - ./data/loki:/loki
@@ -46,7 +46,7 @@ services:
     container_name: alloy
     restart: unless-stopped
     ports:
-      - 29145:12345
+      - "29145:12345"
     command: run --server.http.listen-addr=0.0.0.0:12345 --storage.path=/var/lib/alloy/data /etc/alloy/config.alloy
     volumes:
       - ./configurations/alloy/config.alloy:/etc/alloy/config.alloy
@@ -59,7 +59,7 @@ services:
     container_name: grafana
     restart: unless-stopped
     ports:
-      - 29000:3000
+      - "29000:3000"
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
     volumes:
