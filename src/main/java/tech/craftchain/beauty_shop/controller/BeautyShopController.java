@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +20,7 @@ import tech.craftchain.beauty_shop.service.BeautyShopService;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "data")
+@RequestMapping(path = "data", produces = MediaType.APPLICATION_JSON_VALUE)
 @AllArgsConstructor
 public class BeautyShopController {
     private BeautyShopService beautyShopService;
