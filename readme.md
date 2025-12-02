@@ -6,4 +6,4 @@
     cd tools
 ````
 
-- Follow the instructions from readme.md
+- Follow the instructions from tools/readme.md

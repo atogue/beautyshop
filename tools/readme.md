@@ -22,3 +22,6 @@ http://localhost:8081 --> admin/pass
 
 - Grafana UI :
 http://localhost:29000 --> admin/admin
+
+- localhost UI :
+- http://localhost:8080 --> devops/devops
