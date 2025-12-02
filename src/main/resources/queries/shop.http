@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {
   "name": "Meghan",
-  "email": "meghan@foba.tech",
+  "email": "meghan@craftchain.tech",
   "phone": "+11298765432",
   "shops": [{"name": "New-York Beauty", "phone": "+1234567789", "ownerName": "Meghan", "activities": ["Make-Up", "Clean-hair", "Afro-hair"]}],
   "address": {
@@ -11,6 +11,23 @@ Content-Type: application/json
     "country": "USA",
     "state": "Pennsylvania",
     "zip": "25-577-21"
+  }
+}
+
+###
+POST http://localhost:8080/api/data/v1/users/owner
+Content-Type: application/json
+
+{
+  "name": "Manuel",
+  "email": "manuel@craftchain.tech",
+  "phone": "+33698765432",
+  "shops": [{"name": "Paris Beauty", "phone": "+33134567789", "ownerName": "Manuel", "activities": ["Clean-hair", "Afro-hair"]}],
+  "address": {
+    "city": "Paris",
+    "country": "France",
+    "state": "Paris",
+    "zip": "75000"
   }
 }
 
@@ -32,6 +49,23 @@ Content-Type: application/json
 }
 
 ###
+POST http://localhost:8080/api/data/v1/shops
+Content-Type: application/json
+
+{
+  "name": "Paris Beauty",
+  "phone": "+33234567789",
+  "ownerName": "Manuel",
+  "activities": ["Clean-hair", "Afro-hair"],
+  "address": {
+    "city": "Paris",
+    "country": "France",
+    "state": "Paris",
+    "zip": "75000"
+  }
+}
+
+###
 GET http://localhost:8080/api/data/v1/shops
 Accept: application/json
 
@@ -43,9 +77,20 @@ Content-Type: application/json
 
 {
   "name": "Enzo",
-  "email": "enzo@foba.tech",
+  "email": "enzo@craftchain.tech",
   "phone": "+330198765432",
   "shops": [{"name": "New-York Beauty", "phone": "+1234567789", "ownerName": "Meghan", "activities": ["Make-Up", "Clean-hair", "Afro-hair"]}]
+}
+
+###
+POST http://localhost:8080/api/data/v1/users/client
+Content-Type: application/json
+
+{
+  "name": "Clara",
+  "email": "clara@craftchain.tech",
+  "phone": "+330711165432",
+  "shops": [{"name": "Paris Beauty", "phone": "+1234567789", "ownerName": "Manuel", "activities": ["Make-Up", "Clean-hair", "Afro-hair"]}]
 }
 
 ###
@@ -58,7 +103,7 @@ Content-Type: application/json
 
 {
   "name": "Muriel",
-  "email": "muriel@foba.tech",
+  "email": "muriel@craftchain.tech",
   "phone": "+390123476589",
   "shops": [{"name": "New-York Beauty", "phone": "+1234567789", "ownerName": "Meghan", "activities": ["Make-Up", "Clean-hair", "Afro-hair"]}]
 }

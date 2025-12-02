@@ -7,9 +7,12 @@ spring:
       username: mongo
       password: mongo
       authentication-database: admin
+
 server:
   servlet:
     context-path: /api
+  port: 8080
+
 logging:
   file:
     name: ./logs/${spring.application.name}.log
