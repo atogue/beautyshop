@@ -1,5 +1,7 @@
-POST http://localhost:8080/api/data/v1/users/owner
+POST http://localhost:8082/api/data/v1/users/owner
 Content-Type: application/json
+Authorization: Basic ZGV2b3BzOmRldm9wcw==
+Accept: */*
 
 {
   "name": "Meghan",
@@ -15,8 +17,9 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:8080/api/data/v1/users/owner
+POST http://localhost:8082/api/data/v1/users/owner
 Content-Type: application/json
+Authorization: Basic ZGV2b3BzOmRldm9wcw==
 
 {
   "name": "Manuel",
@@ -32,8 +35,9 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:8080/api/data/v1/shops
+POST http://localhost:8082/api/data/v1/shops
 Content-Type: application/json
+Authorization: Basic ZGV2b3BzOmRldm9wcw==
 
 {
   "name": "New-York Beauty",
@@ -49,8 +53,9 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:8080/api/data/v1/shops
+POST http://localhost:8082/api/data/v1/shops
 Content-Type: application/json
+Authorization: Basic ZGV2b3BzOmRldm9wcw==
 
 {
   "name": "Paris Beauty",
@@ -66,14 +71,16 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8080/api/data/v1/shops
+GET http://localhost:8082/api/data/v1/shops
 Accept: application/json
+Authorization: Basic ZGV2b3BzOmRldm9wcw==
 
 ###
 
 ###
-POST http://localhost:8080/api/data/v1/users/client
+POST http://localhost:8082/api/data/v1/users/client
 Content-Type: application/json
+Authorization: Basic ZGV2b3BzOmRldm9wcw
 
 {
   "name": "Enzo",
@@ -83,8 +90,9 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:8080/api/data/v1/users/client
+POST http://localhost:8082/api/data/v1/users/client
 Content-Type: application/json
+Authorization: Basic ZGV2b3BzOmRldm9wcw
 
 {
   "name": "Clara",
@@ -94,12 +102,14 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8080/api/data/v1/users/client
+GET http://localhost:8082/api/data/v1/users/client
 Accept: application/json
+Authorization: Basic ZGV2b3BzOmRldm9wcw
 
 ###
-POST http://localhost:8080/api/data/v1/users/employee
+POST http://localhost:8082/api/data/v1/users/employee
 Content-Type: application/json
+Authorization: Basic ZGV2b3BzOmRldm9wcw
 
 {
   "name": "Muriel",
@@ -109,7 +119,8 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8080/api/data/v1/users/employee
+GET http://localhost:8082/api/data/v1/users/employee
 Accept: application/json
+Authorization: Basic ZGV2b3BzOmRldm9wcw
 
 ###
