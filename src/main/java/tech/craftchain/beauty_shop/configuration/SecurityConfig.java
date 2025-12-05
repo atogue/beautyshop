@@ -20,7 +20,8 @@ public class SecurityConfig {
     private static final String[] AUTH_WHITELIST = {
             "/api",
             "/api/data/v1/users/**",
-            "/api/data/v1/shops"};
+            "/api/data/v1/shops",
+            "/api-docs", "/swagger-ui.html"};
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
