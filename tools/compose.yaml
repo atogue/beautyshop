@@ -66,6 +66,22 @@ services:
       - ./data/grafana:/var/lib/grafana
     networks:
       - applications-network
+  beauty-shop:
+    image: beauty-shop:0.0.1
+    container_name: beauty-shop
+    depends_on:
+      - mongodb
+    restart: unless-stopped
+    ports:
+      - "8082:8080"
+    environment:
+      - MONGO_HOST=mongodb
+      - MONGO_PORT=27017
+      - MONGO_USER=mongo
+      - MONGO_PASSWORD=mongo
+      - MONGO_AUTH_DB=admin
+    networks:
+      - applications-network
 networks:
   applications-network:
     name: applications-network
