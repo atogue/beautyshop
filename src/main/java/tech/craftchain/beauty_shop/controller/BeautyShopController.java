@@ -1,5 +1,9 @@
 package tech.craftchain.beauty_shop.controller;
 
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.enums.ParameterIn;
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -27,7 +31,8 @@ public class BeautyShopController {
 
     @GetMapping("/v1/users/{type}")
     @ResponseStatus(code = HttpStatus.OK)
-    public List<UserInfo> getAllUsersByType(@PathVariable String type) {
+    public List<UserInfo> getAllUsersByType(@Valid @Parameter(in = ParameterIn.PATH, schema = @Schema(allowableValues = {"CLIENT", "EMPLOYEE", "OWNER"})) @PathVariable String type) {
+        System.out.println("type: " + type);
         return switch (UserType.getType(type.toUpperCase())) {
             case CLIENT -> beautyShopService.findAllClients();
             case EMPLOYEE -> beautyShopService.findAllEmployees();
@@ -38,7 +43,8 @@ public class BeautyShopController {
     @PostMapping("/v1/users/{type}")
     @ResponseStatus(code = HttpStatus.CREATED)
     @Secured("USER")
-    public void createUserByType(@RequestBody UserInfo info, @PathVariable String type) {
+    public void createUserByType(@RequestBody UserInfo info, @Valid @Parameter(in = ParameterIn.PATH, schema = @Schema(allowableValues = {"CLIENT", "EMPLOYEE", "OWNER"})) @PathVariable String type) {
+        System.out.println("type: " + type);
         switch (UserType.getType(type.toUpperCase())) {
             case CLIENT -> {
                 info.setUserType(UserType.CLIENT);
