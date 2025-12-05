@@ -32,7 +32,6 @@ public class BeautyShopController {
     @GetMapping("/v1/users/{type}")
     @ResponseStatus(code = HttpStatus.OK)
     public List<UserInfo> getAllUsersByType(@Valid @Parameter(in = ParameterIn.PATH, schema = @Schema(allowableValues = {"CLIENT", "EMPLOYEE", "OWNER"})) @PathVariable String type) {
-        System.out.println("type: " + type);
         return switch (UserType.getType(type.toUpperCase())) {
             case CLIENT -> beautyShopService.findAllClients();
             case EMPLOYEE -> beautyShopService.findAllEmployees();
@@ -44,7 +43,6 @@ public class BeautyShopController {
     @ResponseStatus(code = HttpStatus.CREATED)
     @Secured("USER")
     public void createUserByType(@RequestBody UserInfo info, @Valid @Parameter(in = ParameterIn.PATH, schema = @Schema(allowableValues = {"CLIENT", "EMPLOYEE", "OWNER"})) @PathVariable String type) {
-        System.out.println("type: " + type);
         switch (UserType.getType(type.toUpperCase())) {
             case CLIENT -> {
                 info.setUserType(UserType.CLIENT);
