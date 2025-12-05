@@ -1,10 +1,10 @@
 package tech.craftchain.beauty_shop.controller;
 
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,6 +37,7 @@ public class BeautyShopController {
 
     @PostMapping("/v1/users/{type}")
     @ResponseStatus(code = HttpStatus.CREATED)
+    @Secured("USER")
     public void createUserByType(@RequestBody UserInfo info, @PathVariable String type) {
         switch (UserType.getType(type.toUpperCase())) {
             case CLIENT -> {
@@ -61,6 +62,7 @@ public class BeautyShopController {
     }
 
     @PostMapping("/v1/shops")
+    @PreAuthorize("hasRole('USER')")
     @ResponseStatus(code = HttpStatus.CREATED)
     public void createShop(@RequestBody ShopInfo info) {
         beautyShopService.createShop(info);
