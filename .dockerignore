@@ -1,5 +1,5 @@
 #ignore ALL
-#*
+*
 
 #keep jar files only
-!*.jar
+!target/*.jar
