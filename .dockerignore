@@ -1,5 +1,7 @@
 #ignore ALL
 *
 
-#keep jar files only
+#keep jar and pom.xml files and src directory only
 !target/*.jar
+!pom.xml
+!src
