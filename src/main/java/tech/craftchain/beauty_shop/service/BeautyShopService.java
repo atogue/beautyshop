@@ -1,7 +1,6 @@
 package tech.craftchain.beauty_shop.service;
 
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import tech.craftchain.beauty_shop.client.Client;

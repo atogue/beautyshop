@@ -20,14 +20,17 @@ import tech.craftchain.beauty_shop.data.ShopInfo;
 import tech.craftchain.beauty_shop.data.UserInfo;
 import tech.craftchain.beauty_shop.data.UserType;
 import tech.craftchain.beauty_shop.service.BeautyShopService;
+import tech.craftchain.beauty_shop.service.ImcService;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping(path = "data", produces = MediaType.APPLICATION_JSON_VALUE)
 @AllArgsConstructor
 public class BeautyShopController {
     private BeautyShopService beautyShopService;
+    private ImcService imcService;
 
     @GetMapping("/v1/users/{type}")
     @ResponseStatus(code = HttpStatus.OK)
@@ -70,6 +73,13 @@ public class BeautyShopController {
     @ResponseStatus(code = HttpStatus.CREATED)
     public void createShop(@RequestBody ShopInfo info) {
         beautyShopService.createShop(info);
+    }
+
+    @GetMapping("/v1/imc/{weight}/{height}")
+    @ResponseStatus(code = HttpStatus.OK)
+    public Map<Double, String> findImcInfoByWeightAndHeight(@Parameter(description = "User's weight in KG") @PathVariable double weight,
+                                                        @Parameter(description = "User's height in X.YZ meters") @PathVariable double height) {
+        return imcService.findImcInfo(weight, height);
     }
 
 }
