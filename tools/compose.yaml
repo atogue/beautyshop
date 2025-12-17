@@ -52,6 +52,7 @@ services:
       - ./configurations/alloy/config.alloy:/etc/alloy/config.alloy
       - ./data/loki:/loki
       - ../logs:/tmp/logs
+      - beauty-shop:/tmp/logs
     networks:
       - applications-network
   grafana:
@@ -80,9 +81,13 @@ services:
       - MONGO_USER=mongo
       - MONGO_PASSWORD=mongo
       - MONGO_AUTH_DB=admin
+    volumes:
+      - beauty-shop:/usr/src/app/logs
     networks:
       - applications-network
 networks:
   applications-network:
     name: applications-network
     external: true
+volumes:
+  beauty-shop:
