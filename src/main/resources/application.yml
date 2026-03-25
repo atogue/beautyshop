@@ -4,10 +4,10 @@ spring:
   data:
     mongodb:
       database: ${spring.application.name}
-      username: mongo
-      password: mongo
-      authentication-database: admin
-#      host: ${MONGO_HOST} #mandatory to connect on db container / must be un-comment in localhost
+      username: mongo #must be comment in localhost
+      password: mongo #must be comment in localhost
+      authentication-database: admin #must be comment in localhost
+      host: ${MONGO_HOST} #mandatory to connect on db container / must be comment in localhost
 
 server:
   servlet:

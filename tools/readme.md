@@ -51,3 +51,11 @@
   - 
   - Execute all requests from the file : src/main/resources/queries/shop.http
   - Refer to OpenAPI UI : http://localhost:8082/api/swagger-ui.html
+
+  - Run in localhost and before start, please COMMENT these parameters from application.yml as described below:
+    - #username: mongo
+    - #password: mongo
+    - #authentication-database: admin
+    - #host: ${MONGO_HOST}
+    - Feel free to change the port number to the default (8080) from src/main/resources/queries/shop.http and run ALL tests
+    - OpenAPI available here : http://localhost:8080/api/swagger-ui.html
